@@ -1,0 +1,125 @@
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+    <body >
+
+    <div id = "homeButtons">
+        <a href = "index.html"> <button type="button" class="btn btn-info">Home Page</button></a>
+        <a href = "Breeds.html"> <button type="button" class="btn btn-info">Breeds Page</button></a>
+        <a href = "vaccinations.html"> <button type="button" class="btn btn-info">Vaccinations</button></a>
+        <button type="button" class="btn btn-light">Food</button>
+    </div>
+
+     <div id="wrapper">
+                 <label id ="remove" for="yes_no_radio">Do you have a kitty?</label>
+                <p>
+                <button id ="remove1" type="button" class="btn btn-success" onclick = "yes();">Yes</button>
+                </p>
+                <p>
+                <button id ="remove2" type="button" class="btn btn-danger" onclick = " no(); setTimeout(remove, 2000);"> No </button>
+                </p>
+        </div>
+
+        <div class = "back">
+            <h1 id = "kitty">Useful and forbidden food for cats!</h1>
+            <h2>Useful food:</h2>
+            <div class = "food">
+                <ul>
+                    <li>Fruits</li>
+                    <h5>Banana - Watermelon Blueberry - Cantaloupe - Pumpkin</h5>
+                    <li>Vegetables</li>
+                    <h5>Cucumber without seeds - Spinach peas - Fries without peel</h5>
+                    <li>Dairy and eggs</li>
+                    <h5>Yogurt and Nesto Cheese (once a day) - Boiled eggs (not much)</h5>
+                    <li>Meat and poultry</li>
+                    <h5>Chicken - Turkey - Liver and Meat (well cooked) - Fish (twice a month)</h5>
+                </ul>
+            </div>
+            <div class = "rrr">
+                 <img src = "foodu.jpg">
+            </div>
+            <div class = "food">
+                <h2 >Forbidden food:</h2>
+            </div>
+
+            <div class = "food">
+
+                <ul>
+                    <li>Drinks</li>
+                    <h5>Alcohol - Caffeine - Milk - Soft drinks</h5>
+                    <li>Sweets</li>
+                    <h5>Sugar - Chocolate - Gum - Ice cream - Raisins - Nuts</h5>
+                    <li>Fruits and Vegetables</li>
+                    <h5>Garlic - onion - tomato - grape - avocado</h5>
+                    <li>Dairy products</li>
+                    <h5>Milk (causes stomach upset)!!.</h5>
+                    <li>Meat and poultry</li>
+                    <h5>Bone (in all its forms) - Meat and Fish (uncooked) - fats</h5>
+                    <li>Other foods</li>
+                    <h5>Chipsy - Salt - Salty food - Human drugs without consulting the veterinarian</h5>
+                </ul>
+            </div>
+            <div class = "rrr">
+                <img src = "no.jpg">
+                <p class = "names"> Do not weaken!</p>
+            </div>
+    </div>
+            <script >
+            function yes()
+            {
+                document.querySelector("#remove").parentNode.removeChild(document.querySelector("#remove"));
+                document.querySelector("#remove1").parentNode.removeChild(document.querySelector("#remove1"));
+                document.querySelector("#remove2").parentNode.removeChild(document.querySelector("#remove2"));
+                var node = document.createElement("label");
+                var t = document.createTextNode("What's your kitty's name?");
+                node.appendChild(t);
+                document.getElementById("wrapper").appendChild(node);
+                var node1 = document.createElement("input");
+                node1.id = "text";
+                 document.getElementById("wrapper").appendChild(node1);
+                var node2 = document.createElement("button");
+                node2.innerHTML = "Let's see!";
+                node2.style.background ="#17A2B8";
+                node2.style.color ="#FFF";
+                node2.style.margin ="15px 0 15px 0";
+                node2.style.padding ="8px";
+                node2.style.border = "none";
+                node2.style.borderRadius = "10px";
+                node2.id = "bot";
+                document.getElementById("wrapper").appendChild(node2);
+                document.getElementById("wrapper").style.margin = "10% 30% 30% 32%";
+                bot.onclick = function()
+                {
+                   var name = document.getElementById("text").value;
+                   if(name != "")
+                   {
+                      document.querySelector("#kitty").innerHTML = "Useful and forbidden food for " + name + "!";
+                      document.querySelector("#wrapper").parentNode.removeChild(document.querySelector("#wrapper"));
+                   }
+                }
+            }
+            function no()
+            {
+                document.querySelector("#remove").parentNode.removeChild(document.querySelector("#remove"));
+                document.querySelector("#remove1").parentNode.removeChild(document.querySelector("#remove1"));
+                document.querySelector("#remove2").parentNode.removeChild(document.querySelector("#remove2"));
+                var node = document.createElement("label");
+                var t = document.createTextNode("Wish you a cute one 🤗💖");
+                node.appendChild(t);
+                document.getElementById("wrapper").appendChild(node);
+                document.getElementById("wrapper").style.margin = "10% 25% 25% 37%";
+                document.getElementById("wrapper").style.padding= "2px 20px 20px 18";
+
+            }
+            function remove()
+            {
+                document.querySelector("#wrapper").parentNode.removeChild(document.querySelector("#wrapper"));
+            }
+
+         </script>
+
+    </body>
+</html>
